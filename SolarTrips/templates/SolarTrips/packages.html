@@ -1,0 +1,21 @@
+{% extends 'SolarTrips/layout.html' %}
+
+{% block title %} MyPackages {% endblock %}
+
+{% block main %}
+    
+<div class="buttons-home">
+    {% for package in packages %}
+        <a href="{% url 'planet' package.id %}">
+            <div class="planet-button">
+                <img src="{{package.image}}" alt="{{package.name}}" class="planet-button-pic">
+                <h2>{{package.name}}</h2>
+            </div>
+        </a> 
+        {% empty %}
+        <h1 class="Empty"> You Have No Current Packages</h1>
+        {% endfor %}
+</div>
+
+
+{% endblock %}

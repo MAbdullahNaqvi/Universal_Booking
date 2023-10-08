@@ -1,0 +1,23 @@
+{% extends 'SolarTrips/layout.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block main %}
+        
+    <div class="register-div">
+            <form action="{% url 'login' %}" method="post" class="register-form">
+                {% if message %}
+                    <span>{{message}}</span>
+                {% endif %}
+                {%csrf_token %}
+                <input type="text" name="name" class="register-feild" placeholder="Name" autofocus required>
+
+                <input type="password" name="password" placeholder="Password"  class="register-feild" required>
+                          
+                <button type="submit" class="register-btn">Login</button>
+                
+                <span>Don't have an account? <a href="{% url 'register' %}"><strong>Register here</strong></a></span>
+            </form>
+    </div>
+
+{% endblock %}

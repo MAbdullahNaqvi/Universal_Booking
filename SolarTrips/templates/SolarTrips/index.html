@@ -1,0 +1,19 @@
+{% extends 'SolarTrips/layout.html' %}
+{% load static %}
+
+
+{% block title %} Home {% endblock %}
+
+{% block main %}
+<h1 class="avalible">Avalible packages: </h1>
+        <div class="buttons-home">
+            {% for planet in planets %}
+                <a href="{% url 'planet' planet.id %}">
+                    <div class="planet-button">
+                        <img src="{{planet.image}}" alt="{{planet.name}}" class="planet-button-pic">
+                        <h2>{{planet.name}}</h2>
+                    </div>
+                </a>     
+            {% endfor %}
+        </div>
+{% endblock %}

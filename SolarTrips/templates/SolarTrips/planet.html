@@ -1,0 +1,67 @@
+{% extends 'SolarTrips/layout.html' %}
+
+{% block title %} {{planet.name}} {% endblock %}
+
+{% block main %}
+        
+        <div class="planet-main">
+            <div class="planet-picture-div">
+                <img src="{{planet.image}}" alt="{{planet.name}}" class="planet-picture">
+            </div>
+            
+            <div class="planet-discription-div">
+                <h1 class="planet-title">{{planet.name}}</h1>
+                <hr>
+                <p class="planet-discription">{{planet.discription}}</p>
+                <hr>
+                <div class="planet-price-div">
+                    <p class="planet-price"><strong>Price: {{planet.price}}$</strong></p>
+                    {% if user.is_authenticated %}
+
+                    <form action="{% url 'planet' planet.id %}" class="book-form" method="post">
+                        {% csrf_token %}
+                        {% if user not in planet.passengers.all %}
+                        {% if  user not in planet.wishlist.all %}
+                        <button type="submit" class="planet-Book" name="Booked">Book Now</button>
+                        {% else %}
+                        <button type="submit" class="wishlist-d" name="Booked" disabled>Book Now</button>
+                        {% endif %}
+                        {% else %}
+                        <button type="submit" class="planet-Book-c" name="cancel_Booked">Cancel Package</button>    
+                        {% endif %}
+                        {% if user not in planet.wishlist.all %}
+                        {% if user not in planet.passengers.all  %}
+                        <button type="submit" class="planet-wish" name="wishlist">Wishlist</button> 
+                        {% else %}
+                        <button type="submit" class="wishlist-d" name="wishlist" disabled >Wishlist</button> 
+                        {% endif %}
+                        {% else %}
+                        <button type="submit" class="planet-wish-c" name="cancel_wishlist">Cancel Wishlist</button> 
+                        {% endif %}
+                    </form>
+                    
+                    {% endif %}
+                </div>
+            </div>
+    </div>
+
+    <div class="destinations">
+        <h1 class="destinations-heading"> Places We Will Visit On {{planet.name}}: </h1>
+        <div class="destination-main">
+            {% for destination in destinations %}
+            
+                <div class="destination">
+                    <div class="destination-pic">
+                        <h1 class="destination-title">{{destination.name}}</h1>
+                        <img src="{{destination.image}}" alt="{{destination.name}}" class="destination-img">
+                        <hr>
+                        <p class="destination-description"> {{destination.description}} </p>
+                    </div>
+    
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+{% endblock %}

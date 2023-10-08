@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&display=swap');
+* {
+    box-sizing: border-box;
+    
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 400;
+}
+html, body{
+    height: 100%;
+}
+body{
+    background-image: url(https://img.freepik.com/free-photo/beautiful-shot-starry-night-sky_181624-11744.jpg?w=740&t=st=1696499399~exp=1696499999~hmac=1cb09f4edb4a5ead10f3f5b9be487709a8db1f39509479c67503baedfe83bd09);
+    background-repeat: repeat-y;
+    background-size: cover;
+    overflow-x: hidden;
+
+}
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.logo {
+    width: 80px;
+    height: 80px;
+    transition: all 0.4s ease 0s;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 20px 5%;
+}
+header li, header a, header button
+{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 400;
+    
+}
+.nav-links {
+    list-style: none;
+}
+.check{
+    display: none;
+}
+.nav-links li {
+    display: inline-block;
+    padding: 8px 20px;
+}
+.nav-links li a {
+    transition: all 0.3s ease 0s;
+}
+.nav-links li a:hover {
+    box-shadow: 0px 0px 10px 8px white;
+    background-color: white;
+    color: #000000;
+}
+header nav ul li  button {
+    padding: 9px 30px;
+    background-color: rgba(92, 131, 116, 100);
+    transition: all 0.4s ease 0s;
+    border-radius: 50px;
+    border: none;
+}
+header nav ul li button:hover {
+    box-shadow: 0px 0px 10px 0px white;
+}
+.checkbtn {
+    font-size: 30px;
+    color: #93B1A6;
+    display: none;
+}
+@media (max-width: 800px) {
+
+    .checkbtn{
+        display: inline-block;
+        cursor: pointer;
+    }
+    .navbar{
+        display: block;
+    }
+    .nav-links{
+        position: fixed;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color:#93B1A6;
+        top: 90px;
+        text-align: center;
+        transition: all 0.3s;
+        
+    }
+    .nav-links li a:hover {
+        color: #000000;
+    }
+    .nav-links li {
+        display: block;
+        padding-top: 50px;
+        margin-top: 20px;       
+    }
+    .check.active {
+        display: flex;
+    }
+    .nav-links.active{
+        left: 0;
+    }
+}
+.register-div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+}
+.register-form{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0px 0px 50px 0px white;
+    width: 300px;
+    height: fit-content;
+    padding: 25px 10px 25px 10px;
+}
+.register-feild{
+    margin-top: 15px;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 10px;
+}
+.register-btn{
+    margin:20px 0 10px 0;
+    background-color: rgba(92, 131, 116, 100);
+    border: none;
+    padding: 10px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.register-btn:hover{
+    background-color:#93B1A6;
+}
+.planet-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px;
+    box-shadow: 0px 0px 50px 0px black;
+    justify-content: center;
+    background-color: black;
+    height: 250px;
+    width: 300px;
+    border-radius: 30px;
+    transition: all .2s ease-in-out; 
+    color: white;
+    font-weight: bolder;
+}
+.planet-button:hover{
+    box-shadow: 0px 0px 50px 5px black;
+    transform: scale(1.1); 
+
+}
+.planet-button a{
+    text-decoration: none;
+}
+.planet-button-pic{
+    width: 250px;
+    height: auto;
+    box-shadow: 0px 0px 50px 0px black;
+    border-radius: 30px;
+}
+.buttons-home{
+    display: flex;
+    flex-wrap: wrap;
+}
+.planet-main{
+    display: flex;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+.planet-picture-div{
+    width: 50%;
+    margin-right: 30px;
+}
+.planet-picture{
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px 0px black;
+}
+.planet-discription-div{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.planet-discription{
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: white;
+}
+.planet-price{
+    font-size: 40px;
+    font-weight: bolder;
+    color: white;
+}
+.planet-title{
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+}
+.hr{
+    border: 5px black;
+}
+.planet-Book{
+    width: 200px;
+    height: 80px;
+    background-color: transparent;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    border: 5px solid white;
+    border-radius: 30px;
+    box-shadow: 0px 0px 30px 0px white;
+    margin-left: auto;
+    margin-right: 20px;
+    transition: all .2s ease-in-out;
+}
+.planet-Book:hover{
+    box-shadow: 0px 0px 30px 10px white;
+    transform: scale(1.1);
+}
+.planet-Book-c{
+    width: 200px;
+    height: 80px;
+    background-color: transparent;
+    color: red;
+    font-size: 25px;
+    font-weight: 700;
+    border: 5px solid red;
+    border-radius: 30px;
+    box-shadow: 0px 0px 30px 0px red;
+    transition: all .2s ease-in-out;
+    margin-left: auto;
+    margin-right: 20px;
+}
+.planet-Book-c:hover{
+    box-shadow: 0px 0px 30px 10px red;
+    transform: scale(1.1);
+}
+.planet-wish{
+    width: 200px;
+    height: 80px;
+    background-color: transparent;
+    color: green;
+    font-size: 25px;
+    font-weight: 700;
+    border: 5px solid green;
+    border-radius: 30px;
+    box-shadow: 0px 0px 30px 0px green;
+    transition: all .2s ease-in-out;
+    margin-left: auto;
+}
+.planet-wish:hover{
+    box-shadow: 0px 0px 30px 10px green;
+    transform: scale(1.1);
+}
+.planet-wish-c{
+    width: 200px;
+    height: 80px;
+    background-color: transparent;
+    color: red;
+    font-size: 25px;
+    transition: all .2s ease-in-out;
+    font-weight: 700;
+    border: 5px solid red;
+    border-radius: 30px;
+    box-shadow: 0px 0px 30px 0px red;
+    margin-left: auto;
+}
+.planet-wish-c:hover{
+    box-shadow: 0px 0px 30px 10px red;
+    transform: scale(1.1);
+}
+.book-form{
+    margin-left: auto;
+}
+.wishlist-d{
+    width: 200px;
+    height: 80px;
+    background-color: transparent;
+    color: grey;
+    font-size: 25px;
+    font-weight: 700;
+    border: 5px solid grey;
+    border-radius: 30px;
+    box-shadow: 0px 0px 30px 0px grey;
+    margin-left: auto;
+}
+.planet-price-div{
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+}
+@media (max-width: 950px) {
+    .planet-main{
+        flex-direction: column;
+    }
+    .planet-discription-div{
+        width: 100%;
+    }
+    .planet-picture-div{
+        width: 100%;
+    }
+}
+.destination-main{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px;
+}
+.destination{
+    background-color: white;
+    width: 45%;
+    height: auto;
+    overflow: hidden;
+    margin-right: 50px;
+    padding: 30px;
+    border-radius: 30px;
+}
+.destination-img{
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
+.destination-title{
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.destination-description{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+.destinations-heading{
+    font-size: larger;
+    font-weight: bolder;
+    color: white;
+    margin-left: 30px;
+}
+.Empty{
+    font-size: 50px;
+    font-weight: bolder;
+    color: white;
+    margin-left: 50px;
+    margin-top: 40px;
+}
+.avalible{
+    font-size: 30px;
+    font-weight: bolder;
+    color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+}
